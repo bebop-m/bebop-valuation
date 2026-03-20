@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bebop Valuation Tool</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card topbar">
+        <form class="symbol-form" data-role="symbol-form">
+          <input data-role="symbol-input" type="text" placeholder="输入股票代码，如 600519.SS" />
+          <button type="submit">分析</button>
+        </form>
+        <div class="symbol-meta">
+          <strong data-role="symbol-name">Bebop Valuation Tool</strong>
+          <span data-role="symbol-price">等待输入参数</span>
+        </div>
+      </section>
+      <section class="card results">
+        <div class="result-block">
+          <p class="eyebrow">年化回报率区间</p>
+          <div data-role="return-range"></div>
+        </div>
+        <div class="result-block">
+          <p class="eyebrow">回报分解</p>
+          <div data-role="breakdown"></div>
+        </div>
+        <div class="result-block">
+          <p class="eyebrow">DCF 保守底线</p>
+          <div data-role="dcf-floor"></div>
+        </div>
+      </section>
+      <section class="card matrix-card">
+        <div class="section-head">
+          <h2>敏感性矩阵</h2>
+          <span>行 = 增长率，列 = 退出 PE</span>
+        </div>
+        <div class="matrix-wrap" data-role="matrix"></div>
+      </section>
+      <section class="card assumptions">
+        <button class="toggle" data-role="toggle-params" type="button">调整假设</button>
+        <div class="params-panel" data-role="params-panel" hidden></div>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

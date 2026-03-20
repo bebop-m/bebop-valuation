@@ -1,0 +1,10 @@
+{
+  "Communication Services": { "low": 18, "mid": 22, "high": 28 },
+  "Consumer Staples - Baijiu": { "low": 25, "mid": 30, "high": 35 },
+  "Consumer Discretionary - Appliance": { "low": 8, "mid": 10, "high": 14 },
+  "Real Estate - Property Mgmt": { "low": 8, "mid": 10, "high": 15 },
+  "Energy - Coal": { "low": 5, "mid": 6, "high": 8 },
+  "Energy - Oil": { "low": 5, "mid": 6, "high": 8 },
+  "Consumer Discretionary - Apparel": { "low": 6, "mid": 8, "high": 12 },
+  "_default": { "low": 8, "mid": 12, "high": 18 }
+}

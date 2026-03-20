@@ -1,0 +1,15 @@
+{
+  "defaultSymbol": "600519.SS",
+  "price": 100,
+  "eps": 5,
+  "dps": 2,
+  "tax_rate": 0,
+  "phase1_years": 5,
+  "holding_years": 10,
+  "terminal_growth": 0.03,
+  "discount_rate": 0.1,
+  "matrix_steps": 5,
+  "growth_mid": 0.08,
+  "growth_spread": 0.04,
+  "industry_default": { "low": 8, "mid": 12, "high": 18 }
+}

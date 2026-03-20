@@ -1,0 +1,58 @@
+{
+  "600519.SS": {
+    "name": "贵州茅台",
+    "price": 1600,
+    "dividendPerShareTtm": 52,
+    "dividendSource": "manual_seed",
+    "updatedAt": "2026-03-20T08:00:00Z",
+    "eps": 66,
+    "eps_source": "manual_seed",
+    "eps_updated": "2026-03-20",
+    "growth_rate_3y": 0.12,
+    "growth_source": "manual_seed",
+    "sector": "Consumer Staples - Baijiu",
+    "trailing_pe": 24.24
+  },
+  "000651.SZ": {
+    "name": "格力电器",
+    "price": 40,
+    "dividendPerShareTtm": 3.2,
+    "dividendSource": "manual_seed",
+    "updatedAt": "2026-03-20T08:00:00Z",
+    "eps": 5,
+    "eps_source": "manual_seed",
+    "eps_updated": "2026-03-20",
+    "growth_rate_3y": 0.05,
+    "growth_source": "manual_seed",
+    "sector": "Consumer Discretionary - Appliance",
+    "trailing_pe": 8
+  },
+  "01277.HK": {
+    "name": "力量发展",
+    "price": 0.38,
+    "dividendPerShareTtm": 0.04,
+    "dividendSource": "manual_seed",
+    "updatedAt": "2026-03-20T08:00:00Z",
+    "eps": 0.09,
+    "eps_source": "manual_seed",
+    "eps_updated": "2026-03-20",
+    "growth_rate_3y": 0.02,
+    "growth_source": "manual_seed",
+    "sector": "Energy - Coal",
+    "trailing_pe": 4.22
+  },
+  "00700.HK": {
+    "name": "腾讯控股",
+    "price": 380.2,
+    "dividendPerShareTtm": 3.2,
+    "dividendSource": "yfinance",
+    "updatedAt": "2026-03-20T08:00:00Z",
+    "eps": 15.82,
+    "eps_source": "yfinance",
+    "eps_updated": "2026-03-20",
+    "growth_rate_3y": 0.12,
+    "growth_source": "yfinance",
+    "sector": "Communication Services",
+    "trailing_pe": 24
+  }
+}
