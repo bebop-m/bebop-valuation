@@ -16,18 +16,21 @@ function recalculate(symbol = appState.symbol) {
   params.pe_band = lookupIndustryPe(params.sector, appState.industryPe) || params.pe_band;
   const g1 = midpoint(params.growth_low, params.growth_high);
   const band = params.pe_band;
+  const baseParams = {
+    ...params,
+    g2: params.terminal_growth,
+    n1: params.phase1_years,
+    years: params.holding_years,
+    taxRate: params.tax_rate
+  };
   const growthRange = linspace(params.growth_low, params.growth_high, appState.config.matrix_steps || DEFAULTS.matrix_steps);
   const peRange = linspace(band.low, band.high, appState.config.matrix_steps || DEFAULTS.matrix_steps);
-  const low = annualizedReturn({ ...params, g1: params.growth_low, g2: params.terminal_growth, n1: params.phase1_years, years: params.holding_years, exitPe: band.low }).annualized;
-  const mid = annualizedReturn({ ...params, g1, g2: params.terminal_growth, n1: params.phase1_years, years: params.holding_years, exitPe: params.exit_pe }).annualized;
-  const high = annualizedReturn({ ...params, g1: params.growth_high, g2: params.terminal_growth, n1: params.phase1_years, years: params.holding_years, exitPe: band.high }).annualized;
-  const base = annualizedReturn({ ...params, g1, g2: params.terminal_growth, n1: params.phase1_years, years: params.holding_years, exitPe: params.exit_pe });
+  const low = annualizedReturn({ ...baseParams, g1: params.growth_low, exitPe: band.low }).annualized;
+  const mid = annualizedReturn({ ...baseParams, g1, exitPe: params.exit_pe }).annualized;
+  const high = annualizedReturn({ ...baseParams, g1: params.growth_high, exitPe: band.high }).annualized;
+  const base = annualizedReturn({ ...baseParams, g1, exitPe: params.exit_pe });
   const floor = dcfFloor(params.eps, g1, params.terminal_growth, params.phase1_years);
-  const matrix = sensitivityMatrix(
-    { ...params, g2: params.terminal_growth, n1: params.phase1_years, years: params.holding_years, taxRate: params.tax_rate },
-    growthRange,
-    peRange
-  );
+  const matrix = sensitivityMatrix(baseParams, growthRange, peRange);
   appState.result = { low, mid, high, base, floor, matrix };
   renderHeader(params);
   renderReturnRange(low, mid, high);
